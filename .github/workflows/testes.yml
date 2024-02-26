@@ -13,8 +13,8 @@ jobs:
     - name: Configuração do AutoIt
       shell: powershell
       run: |
-        choco install autoit -y
-        refreshenv
+       Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
+       choco install autoit -y
 
     - name: Rodar testes com AutoIt
       shell: powershell
