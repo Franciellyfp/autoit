@@ -20,4 +20,7 @@ jobs:
       shell: powershell
       working-directory: D:\a\autoit\
       run: |
-        & "C:\Program Files (x86)\AutoIt3\AutoIt3.exe" "Cadastro de Entregas por Grupo\cadastroDeEntregasPorGrupo.au3"
+        & "C:\Program Files (x86)\AutoIt3\AutoIt3.exe" 
+        $currentDirectory = pwd
+        $scriptPath = $currentDirectory + "\Cadastro de Entregar por Grupo\cadastroDeEntregasPorGrupo.au3"
+        Run($scriptPath)
