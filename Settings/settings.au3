@@ -1,0 +1,1 @@
+Global $caminhoExecutavel = "autoit-tests\Application\ProjetoQA.exe"
