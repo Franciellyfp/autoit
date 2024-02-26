@@ -1,6 +1,3 @@
-; include usada para chamar o arquivo dataGenerators
-ConsoleWrite(@ScriptDir & "\Generators\dataGenerators.au3" & @CRLF)
-
 #include "autoit\Generators\dataGenerators.au3"
 
 ; incluse usada para chamar o arquivo settings
