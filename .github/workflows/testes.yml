@@ -1,18 +1,23 @@
-name: Executar script AutoIt3
+name: Testes com AutoIt
 
-on:
-  push:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
-  build:
+  testes:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v4
+    - name: Checkout do código
+      uses: actions/checkout@v4
 
-      - name: Executar script AutoIt3
-        uses: crazy-max/ghaction-autoit@v1
-        with:
-          script: ./Cadastro\ de\ Entregas\ por\ Grupo/cadastroDeEntregasPorGrupo.au3
+    - name: Configuração do AutoIt
+      shell: powershell
+      run: |
+       Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
+       choco install autoit -y
+
+    - name: Rodar testes com AutoIt
+      shell: powershell
+      working-directory: D:\a\autoit\
+      run: |
+        & "C:\Program Files (x86)\AutoIt3\AutoIt3.exe" .\Cadastro de Entregas por Grupo\cadastroDeEntregasPorGrupo.au3
