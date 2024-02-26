@@ -18,6 +18,6 @@ jobs:
 
     - name: Rodar testes com AutoIt
       shell: powershell
-      working-directory: autoit-tests
+      working-directory: autoit
       run: |
         autoit cadastroDeEntregasPorGrupo.au3
