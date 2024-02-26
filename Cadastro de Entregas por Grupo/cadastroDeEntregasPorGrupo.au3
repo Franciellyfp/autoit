@@ -1,10 +1,10 @@
 ; include usada para chamar o arquivo dataGenerators
 ConsoleWrite(@ScriptDir & "\Generators\dataGenerators.au3" & @CRLF)
 
-#include "autoit-tests\Generators\dataGenerators.au3"
+#include "autoit\Generators\dataGenerators.au3"
 
 ; incluse usada para chamar o arquivo settings
-#include "autoit-tests\Settings\settings.au3"
+#include "autoit\Settings\settings.au3"
 
 ; Abre a aplicação Delphi
 Run($caminhoExecutavel)

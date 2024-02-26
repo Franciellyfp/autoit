@@ -20,4 +20,4 @@ jobs:
       shell: powershell
       working-directory: D:\a\autoit\
       run: |
-        autoit cadastroDeEntregasPorGrupo.au3
+      "autoit\Application\ProjetoQA.exe" cadastroDeEntregasPorGrupo.au3
