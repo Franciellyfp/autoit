@@ -16,11 +16,6 @@ jobs:
         choco install autoit -y
         refreshenv
 
-    - name: Copiar aplicacao-desktop
-      run: |
-        cd .\Application
-        Copy-Item -Path .\Application\* -Destination .\Application -Recurse
-
     - name: Rodar testes com AutoIt
       shell: powershell
       working-directory: autoit-tests
