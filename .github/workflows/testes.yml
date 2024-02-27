@@ -20,4 +20,4 @@ jobs:
       shell: powershell
       working-directory: D:\a\autoit\
       run: |
-        for /r /d %%i in (*.au3) do AutoIt3.exe "%%i"
+        Get-ChildItem -Recurse -Filter *.au3 | ForEach-Object { Start-Process AutoIt3.exe -ArgumentList $_.FullName -Wait }
