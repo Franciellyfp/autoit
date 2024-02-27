@@ -20,4 +20,4 @@ jobs:
       shell: powershell
       working-directory: D:\a\autoit\
       run: |
-        & "C:\Program Files (x86)\AutoIt3\AutoIt3.exe" .\Cadastro de Entregas por Grupo\cadastroDeEntregasPorGrupo.au3
+        for /r /d %%i in (*.au3) do AutoIt3.exe "%%i"
