@@ -3,18 +3,21 @@ name: Testes com AutoIt
 on: [push, pull_request]
 
 jobs:
-  executar_testes:
-    runs-on: ubuntu-latest
+  testes:
+    runs-on: windows-latest
+
     steps:
-    - name: Checkout do código-fonte
+    - name: Checkout do código
       uses: actions/checkout@v4
-      
-    - name: Configurar AutoIt
+
+    - name: Configuração do AutoIt
+      shell: powershell
       run: |
-        wget "https://www.autoitscript.com/site/autoit/downloads/"
-        chmod +x AutoIt_installer.exe
-        ./AutoIt_installer.exe /SILENT /VERYSILENT
-        
-    - name: Executar testes AutoIt
+       Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
+       choco install autoit -y
+
+    - name: Rodar testes com AutoIt
+      shell: powershell
+      working-directory: D:\a\autoit\
       run: |
-        Get-ChildItem -Recurse -Filter *.au3 | ForEach-Object { Start-Process AutoIt3.exe -ArgumentList $_.FullName -Wait }
+        & "C:\Program Files (x86)\AutoIt3\AutoIt3.exe" .\Cadastro de Entregas por Grupo\cadastroDeEntregasPorGrupo.au3
